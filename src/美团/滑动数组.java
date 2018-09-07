@@ -45,8 +45,6 @@ public class 滑动数组 {
                 set.add(data[i]);
             if(set.size()>0)rel++;
 
-
-
         }
         System.out.println(rel);
     }

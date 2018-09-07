@@ -14,7 +14,6 @@ import java.util.Scanner;
 4 5
 5 6
 
-
 *
 * */
 public class 背包01 {
@@ -29,7 +28,7 @@ public class 背包01 {
         }
 
 
-        Integer dp[][]=new Integer[n+1][m+1];
+        int dp[][]=new int[n+1][m+1];
         for (int i = 0; i < n + 1; i++)
             dp[i][0] = 0;
         for (int j = 0; j < m + 1; j++)
@@ -42,8 +41,7 @@ public class 背包01 {
                 else dp[i][j]=dp[i-1][j];
             }
         }
-        MyUtil<Integer> util=new MyUtil<>();
-        util.print(dp,n+1,m+1);
+        MyUtil.print(dp,n+1,m+1);
 
     }
 
