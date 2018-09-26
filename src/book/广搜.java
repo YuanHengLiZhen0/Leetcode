@@ -1,13 +1,24 @@
 package book;
+
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
 import java.util.Arrays;
+
+/*
+6 5
+1 1 0 1 1
+1 0 1 1 1
+1 0 1 0 0
+1 0 1 1 1
+1 1 1 0 1
+1 1 1 1 1
+0 0              //起点
+0 3              //终点
+*/
 public class 广搜 {
         public static void main(String[] args){
             Scanner scanner = new Scanner(System.in);
-            while(scanner.hasNext())
-            {
                 int n=scanner.nextInt();
                 int m=scanner.nextInt();
                 int [][]maze=new int[n][m];
@@ -28,13 +39,14 @@ public class 广搜 {
                 int des_x=scanner.nextInt();	//终点
                 int des_y=scanner.nextInt();
                 if(maze[src_x][src_y]!=1)
-                    continue;
+                   return;
                 Queue<Integer> queue=new LinkedList<Integer>();
                 queue.offer(src_x*m+src_y);			//矩阵数组按0,1,2...n*m编号
                 fa[src_x][src_y]=src_x*m+src_y;
                 visited[src_x][src_y]=1;
                 while(!queue.isEmpty()){
                     int index=queue.poll();
+                    if(des_x*m+des_y==index)break;
                     int x=index/m;
                     int y=index%m;
                     for(int i=0;i<4;i++){
@@ -62,6 +74,6 @@ public class 广搜 {
                 }
                 System.out.println(path.reverse().toString());
             }
-            scanner.close();
-        }
+
+
 }

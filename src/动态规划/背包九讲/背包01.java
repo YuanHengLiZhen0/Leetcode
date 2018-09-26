@@ -1,4 +1,4 @@
-package 背包九讲;
+package 动态规划.背包九讲;
 
 import tool.MyUtil;
 
